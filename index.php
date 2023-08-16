@@ -2,6 +2,11 @@
 <html lang="pt_br">
 
 <head>
+    <?php
+    include_once './config/constantes.php';
+    include_once './config/conexao.php';
+    include_once './func/dashboard.php';
+    ?>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css">
 </head>
 
-<body>
+<body class="bg-dark">
     <div class="container-fluid mt-3">
         <div class="card">
             <div class="card-header">
@@ -87,13 +92,24 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                <form id="frmAddCliente" class="frmAddCliente" name="frmAddCliente" method="post" action="#">
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="nomeCliente"><i class="fa-solid fa-user"></i> Cliente:</label>
+                            <input type="text" class="form-control form-control-sm" id="nomeCliente" name="nomeCliente" placeholder="Nome do Cliente">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefoneCliente"><i class="fa-solid fa-phone"></i> Telefone:</label>
+                            <input type="text" class="form-control form-control-sm" id="telefoneCliente" name="telefoneCliente" placeholder="Telefone do Cliente">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa-solid fa-xmark"></i> Fechar</button>
+                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -169,6 +185,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./js/painel.js"></script>
 </body>
 
 </html>
