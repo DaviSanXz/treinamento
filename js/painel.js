@@ -1,10 +1,11 @@
 function addCliente() {
-    $('#frmAddCliente').on('submit', function(e) {
+    $('#frmAddCliente').on('submit', function (e) {
         e.preventDefault();
 
-        var dados = {
-            acao: '22'
-        }
+        var dados = $(this).serializeArray();
+        dados.push(
+            { name: "acao", value: 'addCliente' }
+        );
 
         $.ajax({
             type: 'POST',
@@ -15,6 +16,10 @@ function addCliente() {
                 // aqui é a load ou alguma execução antes do envio
             }, success: function (retorno) {
                 console.log(retorno);
+                if (retorno == 'Gravado') {
+                    $('div#msgGeral').html("<div class='alert alert-success text-center' role='alert'>Gravado com sucesso!</div>");
+                    alert('Gravado com sucesso!!!')
+                }
                 // aqui é o retorno de sucesso
 
             }
