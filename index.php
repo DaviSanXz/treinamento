@@ -13,6 +13,9 @@
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.23/dist/sweetalert2.min.css
+" rel="stylesheet">
 
     <title>Olá, Mundo!</title>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css">
@@ -25,58 +28,14 @@
                 <i class="fa-solid fa-list"></i> Lista de Cliente
                 <button type="button" class="btn btn-secondary btn-sm btn-warning float-right" data-toggle="modal" data-target="#modalAddCliente"> <i class="fa-solid fa-user-plus"></i> Cadastrar Cliente</button>
             </div>
-
         </div>
         <div class="card-body card">
-            <table class="table table-hover">
-                <thead>
-                    <tr class="bg-danger text-white">
-                        <th scope="col" width="7%"><i class="fa-solid fa-hashtag fa-beat-fade"></i></i> cod:</th>
-                        <th scope="col" width="55%"><i class="fa-solid fa-user"></i> Nome:</th>
-                        <th scope="col" width="26%"><i class="fa-solid fa-phone"></i> Telefone:</th>
-                        <th scope="col" width="12%"><i class="fa-solid fa-bars"></i> Ação:</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Davi Santos Silva</td>
-                        <td>+55 33 99836-6638</td>
-                        <td>
-                            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalAtivarCliente"><span class="mdi mdi-lock-open-check"></span> Ativar</button>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAltCliente"> <span class="mdi mdi-account-edit"></span> Alterar</button>
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalExcCliente"><span class="mdi mdi-trash-can"></span> Excluir</i></button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>
-                            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-secondary">Ativar</button>
-                                <button type="button" class="btn btn-secondary">Alterar</button>
-                                <button type="button" class="btn btn-secondary">Excluir</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>
-                            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-secondary">Ativar</button>
-                                <button type="button" class="btn btn-secondary">Alterar</button>
-                                <button type="button" class="btn btn-secondary">Excluir</button>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+
+            <div id="showpage">
+                <?php include_once './cliente/listarCliente.php'; ?>
+            </div>
             <div id="msgGeral">
-                
+
             </div>
         </div>
     </div>
@@ -105,7 +64,7 @@
                         </div>
                         <div class="form-group">
                             <label for="telefoneCliente"><i class="fa-solid fa-phone"></i> Telefone:</label>
-                            <input type="text" class="form-control form-control-sm" id="telefoneCliente" name="telefoneCliente" placeholder="Telefone do Cliente">
+                            <input type="text" class="form-control form-control-sm maskCelular" id="telefoneCliente" name="telefoneCliente" placeholder="Telefone do Cliente">
                         </div>
 
                     </div>
@@ -187,6 +146,8 @@
     <!-- modal termina aqui -->
 
     <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/jquery.inputmask.min.js" integrity="sha512-efAcjYoYT0sXxQRtxGY37CKYmqsFVOIwMApaEbrxJr4RwqVVGw8o+Lfh/+59TU07+suZn1BWq4fDl5fdgyCNkw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="https://kit.fontawesome.com/152695096d.js" crossorigin="anonymous"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->

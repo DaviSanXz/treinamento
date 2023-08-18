@@ -1,3 +1,4 @@
+mascaras();
 function addCliente() {
     $('#frmAddCliente').on('submit', function (e) {
         e.preventDefault();
@@ -17,12 +18,82 @@ function addCliente() {
             }, success: function (retorno) {
                 console.log(retorno);
                 if (retorno == 'Gravado') {
-                    $('div#msgGeral').html("<div class='alert alert-success text-center' role='alert'>Gravado com sucesso!</div>");
-                    alert('Gravado com sucesso!!!')
+                    $('#modalAddCliente').modal('hide');
+                    listarGeral('listarCliente');
+                    msgGeral()
+                    
+                } else {
+                    $('div#msgGeral').html("<div class='alert alert-danger text-center' role='alert'>Erro na gravação!</div>");
                 }
                 // aqui é o retorno de sucesso
 
             }
         });
     });
+}
+
+function listarCliente() {
+
+    var dados = {
+        acao: 'listarCliente'
+    }
+
+    $.ajax({
+        type: 'POST',
+        dataType: 'html',
+        url: 'controle.php',
+        data: dados,
+        beforeSend: function (retorno) {
+            // aqui é a load ou alguma execução antes do envio
+
+        }, success: function (retorno) {
+            // aqui é o retorno de sucesso
+            $('div#showpage').html(retorno);
+        }
+    });
+
+}
+
+
+function listarGeral(acaopage) {
+
+    var dados = {
+        acao: acaopage
+    }
+
+    $.ajax({
+        type: 'POST',
+        dataType: 'html',
+        url: 'controle.php',
+        data: dados,
+        beforeSend: function (retorno) {
+            // aqui é a load ou alguma execução antes do envio
+
+        }, success: function (retorno) {
+            // aqui é o retorno de sucesso
+            $('div#showpage').html(retorno);
+        }
+    });
+
+}
+
+function mascaras() {
+    $('.maskCelular').inputmask({
+        mask: "+99 99 9 99999-9999",
+        showMaskOnHover: false
+    })
+    $('.maskCep').inputmask({
+        mask: "99999-999"
+    });
+
+}
+
+function msgGeral() {
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Inserido com secesso!',
+        showConfirmButton: false,
+        timer: 2000
+    })
 }
