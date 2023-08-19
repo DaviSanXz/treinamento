@@ -89,16 +89,38 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.23/dist/sweetalert2.min.css
                     </button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    Deseja Ativar este Cliente?
+                    
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+                    <button type="button" class="btn btn-primary" id="btnAtivar">Sim</button>
                 </div>
             </div>
         </div>
     </div>
     <!-- modal Alterar termina aqui -->
+
+    <div class="modal fade" id="modalDesativarCliente" tabindex="-1" role="dialog" aria-labelledby="modalDesativarCliente" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="exampleModalLongTitle"> <span class="mdi mdi-lock-open-check"></span> Desativar Cliente</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Deseja Desativar este este Cliente?
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+                    <button type="button" class="btn btn-primary" id="btnDesativar">Sim</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Moda Alterar Começa aqui-->
     <div class="modal fade" id="modalAltCliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

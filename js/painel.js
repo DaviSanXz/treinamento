@@ -97,3 +97,12 @@ function msgGeral() {
         timer: 2000
     })
 }
+
+function ativarGeral(e,f) {
+    
+    $('#bntDesativar').on('click', function () {
+        alert('f');
+    });
+
+
+}

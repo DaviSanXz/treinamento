@@ -32,9 +32,32 @@ if ($retornoListaCliente != 'vazio') {
                     <th scope="row"><?php echo $idcliente; ?></th>
                     <td><?php echo $nome; ?></td>
                     <td><?php echo $telefone; ?></td>
-                    <td>
+                    <td class="text-right">
                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalAtivarCliente"><span class="mdi mdi-lock-open-check"></span> Ativar</button>
+
+
+                            <?php
+                            if ($ativo == 'A') {
+                                // aqui ativado
+                            ?>
+
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalDesativarCliente" onclick="ativarGeral(<?php echo $idcliente ?>,'inputClienteD');"><i class="fa-solid fa-lock-open"></i> Ativo</button>
+
+
+                            <?php
+                            } else {
+                                // aqui desativado
+                            ?>
+                                <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#modalAtivarCliente' onclick="ativarGeral(<?php echo $idcliente ?>,'inputClienteA');"><i class='fa-solid fa-lock'></i></i> Desativado</button>
+
+                            <?php
+                            }
+                            ?>
+
+
+
+
+
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAltCliente"> <span class="mdi mdi-account-edit"></span> Alterar</button>
                             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalExcCliente"><span class="mdi mdi-trash-can"></span> Excluir</i></button>
                         </div>
