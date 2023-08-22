@@ -98,6 +98,16 @@ function msgGeral() {
     })
 }
 
+function msgAtualizado() {
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Atualizado com secesso!',
+        showConfirmButton: false,
+        timer: 1000
+    })
+}
+
 function ativarGeral(e, f, idbtn, acaopage, idModal, pageretorno) {
     if (f == 'ativar') {
         var btn = idbtn;
@@ -125,12 +135,11 @@ function ativarGeral(e, f, idbtn, acaopage, idModal, pageretorno) {
                 // aqui é o retorno de sucesso
                 if (retorno=='Atualizado'){
                     $('#'+idModal).modal('hide');
-                    msgGeral();
-                    $('div#msgGeral').html("<div class='alert alert-success text-center' role='alert'>Gravado com Sucesso!!!</div>");
+                    msgAtualizado ();
                     listarGeral(pageretorno);
                     setTimeout(function () {
                         $('div#msgGeral').html('');
-                    }, 1000)
+                    }, 1100)
                     
                 }
 
