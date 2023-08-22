@@ -111,7 +111,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.23/dist/sweetalert2.min.css
                     </button>
                 </div>
                 <div class="modal-body">
-                    Deseja Desativar este este Cliente?
+                    Deseja Desativar este Cliente?
                     
                 </div>
                 <div class="modal-footer">

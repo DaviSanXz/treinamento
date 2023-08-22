@@ -41,14 +41,14 @@ if ($retornoListaCliente != 'vazio') {
                                 // aqui ativado
                             ?>
 
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalDesativarCliente" onclick="ativarGeral(<?php echo $idcliente ?>,'inputClienteD');"><i class="fa-solid fa-lock-open"></i> Ativo</button>
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalDesativarCliente" onclick="ativarGeral(<?php echo $idcliente ?>,'desativar', 'btnDesativar', 'ativarCliente', 'modalDesativarCliente', 'listarCliente');"><i class="fa-solid fa-lock-open"></i> Ativo</button>
 
 
                             <?php
                             } else {
                                 // aqui desativado
                             ?>
-                                <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#modalAtivarCliente' onclick="ativarGeral(<?php echo $idcliente ?>,'inputClienteA');"><i class='fa-solid fa-lock'></i></i> Desativado</button>
+                                <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#modalAtivarCliente' onclick="ativarGeral(<?php echo $idcliente ?>,'ativar', 'btnAtivar', 'ativarCliente', 'modalAtivarCliente', 'listarCliente');"><i class='fa-solid fa-lock'></i></i> Desativado</button>
 
                             <?php
                             }

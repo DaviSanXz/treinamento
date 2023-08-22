@@ -7,4 +7,7 @@ switch ($acao) {
     case 'listarCliente':
         include_once './cliente/listarCliente.php';
         break;
+    case 'ativarCliente':
+        include_once './cliente/ativarCliente.php';
+        break;
 }

@@ -79,7 +79,7 @@ function listarGeral(acaopage) {
 
 function mascaras() {
     $('.maskCelular').inputmask({
-        mask: "+99 99 9 99999-9999",
+        mask: "+99 99 9 9999-9999",
         showMaskOnHover: false
     })
     $('.maskCep').inputmask({
@@ -94,15 +94,49 @@ function msgGeral() {
         icon: 'success',
         title: 'Inserido com secesso!',
         showConfirmButton: false,
-        timer: 2000
+        timer: 1000
     })
 }
 
-function ativarGeral(e,f) {
-    
-    $('#bntDesativar').on('click', function () {
-        alert('f');
+function ativarGeral(e, f, idbtn, acaopage, idModal, pageretorno) {
+    if (f == 'ativar') {
+        var btn = idbtn;
+        var ativo = 'A';
+    } else {
+        var btn = idbtn;
+        var ativo = 'D';
+    }
+    $('#' + btn).on('click', function () {
+        var dados = {
+            acao: acaopage,
+            id:e,
+            a:ativo
+        }
+
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: 'controle.php',
+            data: dados,
+            beforeSend: function (retorno) {
+                // aqui é a load ou alguma execução antes do envio
+
+            }, success: function (retorno) {
+                // aqui é o retorno de sucesso
+                if (retorno=='Atualizado'){
+                    $('#'+idModal).modal('hide');
+                    msgGeral();
+                    $('div#msgGeral').html("<div class='alert alert-success text-center' role='alert'>Gravado com Sucesso!!!</div>");
+                    listarGeral(pageretorno);
+                    setTimeout(function () {
+                        $('div#msgGeral').html('');
+                    }, 1000)
+                    
+                }
+
+                console.log(retorno);
+                // $('div#showpage').html(retorno);
+            }
+        });
     });
-
-
 }
