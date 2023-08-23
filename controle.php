@@ -10,4 +10,7 @@ switch ($acao) {
     case 'ativarCliente':
         include_once './cliente/ativarCliente.php';
         break;
+    case 'excluirCliente':
+        include_once './cliente/excluirCliente.php';
+        break;
 }

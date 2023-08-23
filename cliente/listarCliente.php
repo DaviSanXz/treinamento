@@ -59,7 +59,7 @@ if ($retornoListaCliente != 'vazio') {
 
 
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAltCliente"> <span class="mdi mdi-account-edit"></span> Alterar</button>
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalExcCliente"><span class="mdi mdi-trash-can"></span> Excluir</i></button>
+                            <button type="button" class="btn btn-danger" onclick="deleteGeralMsg(<?php echo $idcliente ?>, 'excluirCliente', 'listarCliente')"><span class="mdi mdi-trash-can"></span> Excluir</i></button>
                         </div>
                     </td>
                 </tr>

@@ -21,7 +21,7 @@ function addCliente() {
                     $('#modalAddCliente').modal('hide');
                     listarGeral('listarCliente');
                     msgGeral()
-                    
+
                 } else {
                     $('div#msgGeral').html("<div class='alert alert-danger text-center' role='alert'>Erro na gravação!</div>");
                 }
@@ -119,8 +119,8 @@ function ativarGeral(e, f, idbtn, acaopage, idModal, pageretorno) {
     $('#' + btn).on('click', function () {
         var dados = {
             acao: acaopage,
-            id:e,
-            a:ativo
+            id: e,
+            a: ativo
         }
 
         $.ajax({
@@ -133,14 +133,14 @@ function ativarGeral(e, f, idbtn, acaopage, idModal, pageretorno) {
 
             }, success: function (retorno) {
                 // aqui é o retorno de sucesso
-                if (retorno=='Atualizado'){
-                    $('#'+idModal).modal('hide');
-                    msgAtualizado ();
+                if (retorno == 'Atualizado') {
+                    $('#' + idModal).modal('hide');
+                    msgAtualizado();
                     listarGeral(pageretorno);
                     setTimeout(function () {
                         $('div#msgGeral').html('');
                     }, 1100)
-                    
+
                 }
 
                 console.log(retorno);
@@ -148,4 +148,46 @@ function ativarGeral(e, f, idbtn, acaopage, idModal, pageretorno) {
             }
         });
     });
+}
+
+
+function deleteGeralMsg(idvar, acaopage, pageretorno) {
+    Swal.fire({
+        title: 'Deseja Excluir este Registro?',
+        text: "Você não podera desfazer essa operação!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sim, pode excluir!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+
+            var dados = {
+                acao: acaopage,
+                id: idvar
+            }
+
+            $.ajax({
+                type: 'POST',
+                dataType: 'html',
+                url: 'controle.php',
+                data: dados,
+                beforeSend: function (retorno) {
+                    // aqui é a load ou alguma execução antes do envio
+
+                }, success: function (retorno) {
+                    // aqui é o retorno de sucesso
+                    listarGeral(pageretorno);
+                    Swal.fire(
+                        'Deletado com Sucesso!',
+                        'Lista Atualizada',
+                        'success'
+                    )
+                }
+            });
+
+
+        }
+    })
 }
