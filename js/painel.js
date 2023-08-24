@@ -45,7 +45,7 @@ function listarCliente() {
         data: dados,
         beforeSend: function (retorno) {
             // aqui é a load ou alguma execução antes do envio
-
+            
         }, success: function (retorno) {
             // aqui é o retorno de sucesso
             $('div#showpage').html(retorno);
@@ -190,4 +190,31 @@ function deleteGeralMsg(idvar, acaopage, pageretorno) {
 
         }
     })
+}
+
+function dadosCliente(idvar) {
+    var dados = {
+        acao: 'verDadosCliente',
+        id: idvar
+    }
+    // $('#modalAltCliente').modal('show')
+
+    alert(idvar)
+
+    $.ajax({
+        type: 'POST',
+        dataType: 'JSON',
+        url: 'controle.php',
+        data: dados,
+        beforeSend: function (retorno) {
+            // aqui é a load ou alguma execução antes do envio
+
+        }, success: function (retorno) {
+            // aqui é o retorno de sucesso
+            console.log(retorno)
+            alert(retorno['dados'].idcliente);
+        }
+    });
+
+
 }

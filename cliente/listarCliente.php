@@ -3,8 +3,8 @@ include_once './config/constantes.php';
 include_once './config/conexao.php';
 include_once './func/dashboard.php';
 
-$retornoListaCliente = listarGeral('idcliente, nome, telefone, ativo', 'cliente');
-if ($retornoListaCliente != 'vazio') {
+$retornoListaCliente = listarGeral("idcliente, nome, telefone, ativo", "cliente");
+if ($retornoListaCliente != 'Vazio') {
 
 ?>
     <table class="table table-hover">
@@ -58,7 +58,7 @@ if ($retornoListaCliente != 'vazio') {
 
 
 
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAltCliente"> <span class="mdi mdi-account-edit"></span> Alterar</button>
+                            <button type="button" class="btn btn-primary" onclick="dadosCliente(<?php echo $idcliente ?>)"> <span class="mdi mdi-account-edit"></span> Alterar</button>
                             <button type="button" class="btn btn-danger" onclick="deleteGeralMsg(<?php echo $idcliente ?>, 'excluirCliente', 'listarCliente')"><span class="mdi mdi-trash-can"></span> Excluir</i></button>
                         </div>
                     </td>

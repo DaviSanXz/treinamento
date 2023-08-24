@@ -13,9 +13,7 @@
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="
-https://cdn.jsdelivr.net/npm/sweetalert2@11.7.23/dist/sweetalert2.min.css
-" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.23/dist/sweetalert2.min.css" rel="stylesheet">
 
     <title>Olá, Mundo!</title>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css">
@@ -90,7 +88,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.23/dist/sweetalert2.min.css
                 </div>
                 <div class="modal-body">
                     Deseja Ativar este Cliente?
-                    
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
@@ -112,7 +110,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.23/dist/sweetalert2.min.css
                 </div>
                 <div class="modal-body">
                     Deseja Desativar este Cliente?
-                    
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
@@ -133,11 +131,25 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.23/dist/sweetalert2.min.css
                     </button>
                 </div>
                 <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <form id="frmAltCliente" class="frmAltCliente" name="frmAltCliente" method="post" action="#">
+                        <div class="modal-body">
+
+                            <div class="form-group">
+                                <label for="nomeClienteAlt"><i class="fa-solid fa-user"></i> Cliente:</label>
+                                <input type="text" class="form-control form-control-sm" id="nomeClienteAlt" name="nomeClienteAlt" placeholder="Nome do Cliente">
+                            </div>
+                            <div class="form-group">
+                                <label for="telefoneClienteAlt"><i class="fa-solid fa-phone"></i> Telefone:</label>
+                                <input type="text" class="form-control form-control-sm maskCelular" id="telefoneClienteAlt" name="telefoneClienteAlt" placeholder="Telefone do Cliente">
+                                <input type="hidden" value="" id="idClienteAlt" name="idClienteAlt">
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa-solid fa-xmark"></i> Fechar</button>
+                            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

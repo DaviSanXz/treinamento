@@ -13,4 +13,7 @@ switch ($acao) {
     case 'excluirCliente':
         include_once './cliente/excluirCliente.php';
         break;
+    case 'verDadosCliente':
+        include_once './cliente/verDadosCliente.php';
+        break;
 }
